@@ -1,3 +1,9 @@
+#date {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: steelblue;
+}
+
 body {
        font-family:"Playfair Display" , Arial, sans-serif;
        background-color: #f5ebe0;
