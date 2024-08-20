@@ -125,3 +125,43 @@ function clearData() {
 
 // Load transactions when the page loads
 document.addEventListener('DOMContentLoaded', loadTransactions);
+
+document.getElementById('exportText').addEventListener('click', exportToText);
+
+function exportToText() {
+    const transactionListItems = document.querySelectorAll('#transactionList li');
+    let transactionText = 'Transactions:\n';
+
+    transactionListItems.forEach(item => {
+        const type = item.classList.contains('income') ? 'Income' : 'Expense';
+        const description = item.textContent.split(':')[0].trim();
+        const amount = item.textContent.split('₹')[1].split(' ')[0].trim();
+
+        transactionText += `${type}: ${description}: ₹${amount}\n`;
+    });
+
+    const balance = document.getElementById('balance').textContent;
+    const totalIncome = document.getElementById('totalIncome').textContent;
+    const totalExpenses = document.getElementById('totalExpenses').textContent;
+
+    const data = `
+Transactions:
+${transactionText}
+Balance: ₹${balance}
+Total Income: ₹${totalIncome}
+Total Expenses: ₹${totalExpenses}`;
+
+    const blob = new Blob([data], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'budget_data.txt';
+    document.body.appendChild(a);
+    a.click();
+
+    // Cleanup
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
