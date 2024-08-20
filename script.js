@@ -1,3 +1,9 @@
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+
 let balance = 0;
 let totalIncome = 0;
 let totalExpenses = 0;
