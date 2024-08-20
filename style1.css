@@ -1,0 +1,179 @@
+body {
+       font-family:"Playfair Display" , Arial, sans-serif;
+       background-color: #f5ebe0;
+       /* Soft background */
+       margin: 0;
+       padding: 20px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       transition: background-color 0.3s ease-in-out;
+   }
+
+   /* Main container styling */
+   .container {
+       background: #EDEDE9;
+       /* Container background */
+       padding: 20px;
+       border-radius: 10px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       max-width: 400px;
+       width: 100%;
+       transition: transform 0.3s ease-in-out;
+   }
+
+   /* Header styling */
+   h1 {
+       text-align: center;
+       margin-bottom: 20px;
+       color: #827081;
+       /* Header text color */
+   }
+
+   /* Input and button group styling */
+   .input-group {
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+       margin-bottom: 20px;
+   }
+
+   /* Input fields */
+   .input-group input,
+   .input-group button {
+       padding: 10px;
+       border-radius: 5px;
+       border: 1px solid #D6CCC2;
+       /* Input border color */
+       font-size: 16px;
+   }
+
+   /* Input background color */
+   .input-group input {
+       background-color: #E3D5CA;
+       /* Input field background */
+       color: #333;
+   }
+
+   /* Button styling */
+   .input-group button {
+       background-color: #D5BDAF;
+       /* Button background */
+       color: white;
+       cursor: pointer;
+       transition: background-color 0.3s ease-in-out;
+       border: none;
+   }
+
+   /* Hover effect for buttons */
+   .input-group button:hover {
+       background-color: #D6CCC2;
+       /* Button hover background */
+   }
+   .input-group button:nth-child(3):hover {
+       background-color: #6cd45e;
+       /* Button hover background */
+   }
+
+   /* Styling for the expense button */
+   .input-group button:nth-child(4) {
+       background-color: #D6CCC2;
+       /* Expense button background */
+   }
+   
+
+   /* Hover effect for expense button */
+   .input-group button:nth-child(4):hover {
+       background-color: #e84a4a;
+       /* Expense button hover background */
+   }
+
+   /* Output group styling */
+   .output-group {
+       text-align: center;
+       margin-bottom: 20px;
+   }
+
+   /* Output text styling */
+   .output-group h2,
+   .output-group h3 {
+       margin: 5px 0;
+       color: #762323;
+       /* Output text color */
+       transition: color 0.3s ease-in-out;
+   }
+
+   /* Transaction list styling */
+   #transactionList {
+       list-style-type: none;
+       padding: 0;
+       margin: 0;
+   }
+
+   /* Individual transaction item styling */
+   #transactionList li {
+       background-color: #EDEDE9;
+       /* Transaction item background */
+       padding: 10px;
+       margin: 10px 0;
+       border-left: 5px solid;
+       border-radius: 5px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       animation: fadeIn 0.5s ease-in-out;
+   }
+
+   /* Delete button within transactions */
+   #transactionList li button {
+       background: none;
+       border: none;
+       color: #f44336;
+       font-size: 18px;
+       cursor: pointer;
+   }
+
+   /* Income border color */
+   .income {
+       border-color: #D5BDAF;
+   }
+
+   /* Expense border color */
+   .expense {
+       border-color: #D6CCC2;
+   }
+
+   /* Feedback message styling */
+   .feedback {
+       text-align: center;
+       color: #f44336;
+       font-size: 14px;
+       margin-bottom: 10px;
+       height: 18px;
+   }
+
+   /* Animation for transaction items */
+   @keyframes fadeIn {
+       from {
+           opacity: 0;
+           transform: translateY(-20px);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+.input-group button:nth-child(5) { /* Styles specifically for Clear Data button */
+    background-color: #D5BDAF; /* Red background to indicate caution */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.input-group button:nth-child(5):hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
